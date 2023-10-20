@@ -14,6 +14,18 @@ export default function Home() {
     token: '0x5fbdb2315678afecb367f032d93f642f64180aa3',
   })
   return (
-    <div>balance: {data?.formatted}</div>
+    <div>
+      <div>
+        <div>faucet</div>
+        <button>get token</button>
+      </div>
+
+      <div>
+        <div>deposit</div>
+        <button>Yes!</button>
+      </div>
+      
+      <div>balance: {data?.formatted}</div>
+    </div>
   )
 }
