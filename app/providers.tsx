@@ -1,0 +1,86 @@
+"use client"
+import { useNProgress } from '@/hooks/useNProgress';
+import { useDarkModeListener } from '@/hooks/useDarkMode';
+import { useState, createContext } from "react";
+import { ThemeProvider, useTheme } from "next-themes";
+import { DARK_MODE_STORAGE_KEY } from '@/lib/constants';
+import { createTheme } from "@mantine/core"
+import HomeLayout from './(home)/layout';
+import { WagmiConfig, createConfig, mainnet } from 'wagmi';
+import { localhost, sepolia, polygon } from 'wagmi/chains'
+import { createPublicClient, http } from 'viem';
+import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
+
+
+// wagmi config
+const wagmiConfig = createConfig({
+    autoConnect: true,
+    publicClient: createPublicClient({
+        chain: sepolia,
+        transport: http()
+    }),
+});
+const chains = [mainnet, polygon, sepolia, localhost];
+const config = createConfig(
+    getDefaultConfig({
+        appName: "CJ Project",
+        chains,
+        walletConnectProjectId: ""
+    })
+)
+
+import { Mainnet, DAppProvider, useEtherBalance, useEthers, Config, Goerli, Sepolia } from '@usedapp/core'
+import { formatEther } from '@ethersproject/units'
+import { getDefaultProvider } from 'ethers'
+// useDApp config
+const useDAppConfig: Config = {
+    readOnlyChainId: Sepolia.chainId,
+    readOnlyUrls: {
+        [Mainnet.chainId]: getDefaultProvider('mainnet'),
+        [Sepolia.chainId]: getDefaultProvider('sepolia'),
+    },
+} 
+
+
+let mantineDefaultColorSchemeT = "auto"
+if (typeof localStorage !== "undefined") {
+  if (localStorage.getItem(DARK_MODE_STORAGE_KEY) === "light") {
+    mantineDefaultColorSchemeT = "light"
+  } else if (localStorage.getItem(DARK_MODE_STORAGE_KEY) === "dark") {
+    mantineDefaultColorSchemeT = "dark"
+  }
+}
+export const mantineTheme = createTheme({
+    fontFamily: 'Roboto, sans-serif',
+    // primaryColor: 'cyan',
+})
+
+export const mantineDefaultColorScheme = mantineDefaultColorSchemeT as
+    | "auto"
+    | "light"
+    | "dark"
+
+
+export default function Providers({
+    children,
+    lang,
+}: {
+    children?: React.ReactNode,
+    lang?: string
+}) {
+    useNProgress();
+
+    // 暂时没用上，也不知道怎么测试
+    // useDarkModeListener();
+    return (
+        <ThemeProvider>   
+            <WagmiConfig config={config}>
+                <ConnectKitProvider>                    
+                    <HomeLayout>{children}</HomeLayout>  
+                </ConnectKitProvider>                               
+            </WagmiConfig>                                                                   
+        </ThemeProvider>
+        
+        
+    )
+}
