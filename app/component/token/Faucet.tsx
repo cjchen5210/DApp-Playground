@@ -1,3 +1,5 @@
+"use client";
+
 import { CryptoCards, Button, Input } from '@web3uikit/core';
 
 export default function Faucet() {

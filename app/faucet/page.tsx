@@ -26,7 +26,7 @@ export default function Home() {
       <div>
         <Faucet></Faucet>
         <Deposit></Deposit>
-        <div>balance: {data?.formatted}</div>
+        <div>contract balance: {data?.formatted}</div>
       </div>
     )
   }
