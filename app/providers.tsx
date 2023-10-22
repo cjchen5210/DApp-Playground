@@ -26,7 +26,7 @@ const config = createConfig(
     getDefaultConfig({
         appName: "CJ Project",
         chains,
-        walletConnectProjectId: "9cf2ed4e479fccdd7a296cd5cb0c6492",
+        walletConnectProjectId: process.env.walletConnectProjectId,
         publicClient: publicClient,
     })
 )
