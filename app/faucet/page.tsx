@@ -10,12 +10,16 @@ import Deposit from "../component/token/Deposit";
 import Faucet from "../component/token/Faucet";
 
 export default function Home() {    
-  const { data, isError, isLoading } = useBalance({
+  const { data: contractData, isError, isLoading } = useBalance({
     address: '0x5fbdb2315678afecb367f032d93f642f64180aa3',
     token: '0x5fbdb2315678afecb367f032d93f642f64180aa3',
   })
 
-
+  const {address} = useAccount();
+  const {data: accountData} = useBalance({
+    address: address,
+    token: '0x5fbdb2315678afecb367f032d93f642f64180aa3',
+  })
 
   useEffect(() => {
     
@@ -26,7 +30,8 @@ export default function Home() {
       <div>
         <Faucet></Faucet>
         <Deposit></Deposit>
-        <div>contract balance: {data?.formatted}</div>
+        <div>contract balance: {contractData?.formatted}</div>
+        <div>account token balance: {accountData?.formatted}</div>
       </div>
     )
   }
