@@ -8,6 +8,8 @@ import { useBalance, useAccount } from 'wagmi'
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'  
 import Deposit from "../component/token/Deposit";
 import Faucet from "../component/token/Faucet";
+import History from "../component/token/History";
+
 
 export default function Home() {    
   const { data: contractData, isError, isLoading } = useBalance({
@@ -27,11 +29,10 @@ export default function Home() {
 
   if (!isLoading) {
     return (
-      <div>
-        <Faucet></Faucet>
+      <div>        
+        <Faucet accountData={accountData} contractData={contractData}></Faucet>
         <Deposit></Deposit>
-        <div>contract balance: {contractData?.formatted}</div>
-        <div>account token balance: {accountData?.formatted}</div>
+        <History></History>
       </div>
     )
   }
