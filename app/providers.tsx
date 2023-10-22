@@ -11,21 +11,23 @@ import { localhost, sepolia, polygon } from 'wagmi/chains'
 import { createPublicClient, http } from 'viem';
 import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
 
-
+const publicClient = createPublicClient({
+    chain: localhost,
+    transport: http()
+})
 // wagmi config
 const wagmiConfig = createConfig({
     autoConnect: true,
-    publicClient: createPublicClient({
-        chain: sepolia,
-        transport: http()
-    }),
+    publicClient: publicClient,
 });
+
 const chains = [mainnet, polygon, sepolia, localhost];
 const config = createConfig(
     getDefaultConfig({
         appName: "CJ Project",
         chains,
-        walletConnectProjectId: ""
+        walletConnectProjectId: "9cf2ed4e479fccdd7a296cd5cb0c6492",
+        publicClient: publicClient,
     })
 )
 

@@ -21,9 +21,8 @@ export default function HomeLayout({
             </section>
             <footer>
                 <div className='flex flex-raw space-x-14'>
-                    <span>copyright</span>
                     <span>github</span>
-                    <span>Twitter</span>
+                    <span>Blog</span>
                 </div>
                 <ThemeSwitch></ThemeSwitch> 
             </footer>
