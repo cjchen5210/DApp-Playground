@@ -7,13 +7,13 @@ import { CONTRACT_ADDRESS } from '@/lib/constants';
 
 
 export default function Deposit() {
-    const [depositValue, setDepositValue] = useState<string>("");
+    const [depositValue, setDepositValue] = useState<number>(0);
     const { config } = usePrepareContractWrite({
         address: CONTRACT_ADDRESS,
         abi: DeflationToken.abi,
         functionName: 'transfer',
         // chainId: 31337,
-        args: [CONTRACT_ADDRESS, BigInt(depositValue + "000000000000000000")],
+        args: [CONTRACT_ADDRESS, BigInt(depositValue * 1E18)],
       })
     const { data, isSuccess, write } = useContractWrite(config)
 
