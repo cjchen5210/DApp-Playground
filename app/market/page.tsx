@@ -25,8 +25,8 @@ export default function Home() {
                 width="100%"
               />
             </div>
-          </Card>
-</div>
+            </Card>
+          </div>          
       </>
     )
   }

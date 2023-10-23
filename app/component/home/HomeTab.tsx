@@ -9,8 +9,8 @@ const tabs = [
         link: "/",
     },
     {
-        name: "Faucet",
-        link: "/faucet",
+        name: "Token",
+        link: "/token",
     },
     {
         name: "NFT Market",
