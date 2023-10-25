@@ -1,11 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import {ethers} from "ethers";
-import deflationToken from "../../contracts/DeflationToken.json";
-import { publicClient } from "../../lib/publicClient";
 import { useBalance, useAccount } from 'wagmi'
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'  
 import Deposit from "../component/token/Deposit";
 import Faucet from "../component/token/Faucet";
 import History from "../component/token/History";
