@@ -30,8 +30,8 @@ export default function Home() {
           icon: "xxxx",
         },
         {
-          title: "Smart Contract Listener",
-          subtitle: "光明正大窃听的智能合约",
+          title: "Coming soon......",
+          subtitle: "---",
           content: "",
           icon: "yes",
         }

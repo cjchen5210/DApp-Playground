@@ -31,18 +31,6 @@ const config = createConfig(
     })
 )
 
-import { Mainnet, DAppProvider, useEtherBalance, useEthers, Config, Goerli, Sepolia } from '@usedapp/core'
-import { formatEther } from '@ethersproject/units'
-import { getDefaultProvider } from 'ethers'
-// useDApp config
-const useDAppConfig: Config = {
-    readOnlyChainId: Sepolia.chainId,
-    readOnlyUrls: {
-        [Mainnet.chainId]: getDefaultProvider('mainnet'),
-        [Sepolia.chainId]: getDefaultProvider('sepolia'),
-    },
-} 
-
 
 let mantineDefaultColorSchemeT = "auto"
 if (typeof localStorage !== "undefined") {

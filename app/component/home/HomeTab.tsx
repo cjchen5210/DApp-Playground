@@ -17,8 +17,8 @@ const tabs = [
         link: "/market",
     },
     {
-        name: "Fake Twitter",
-        link: "/twitter",
+        name: "Chat",
+        link: "/chat",
     },
 ]
 
