@@ -18,20 +18,20 @@ export default function Home() {
       title: "Introduction",
       subfeatures: [
         {
-          title: "Stablecoin",
-          subtitle: "想通过算法保持稳定但是不太稳定的稳定币",
+          title: "Token",
+          subtitle: "DEX 交换各种Token",
           content: "",
           icon: "xxx",
         },
         {
           title: "NFT Market",
-          subtitle: "随意交易的NFT市场",
+          subtitle: "AI制作图片，铸造NFT，交易NFT",
           content: "",
           icon: "xxxx",
         },
         {
-          title: "Smart Contract Listener",
-          subtitle: "光明正大窃听的智能合约",
+          title: "Coming soon......",
+          subtitle: "---",
           content: "",
           icon: "yes",
         }

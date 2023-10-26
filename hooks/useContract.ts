@@ -7,14 +7,5 @@ import { createPublicClient, http } from 'viem';
 import { localhost, sepolia, polygon } from 'wagmi/chains'
 
 export const useContract = async () => {
-    const publicClient = usePublicClient();
-    const client= createPublicClient({
-        chain: sepolia,
-        transport: http()
-    });
-    const contract = getContract({
-        address: CONTRACT_ADDRESS,
-        abi: DeflationToken.abi,
-        publicClient: publicClient,
-    })
+
 }

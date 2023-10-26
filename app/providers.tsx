@@ -7,7 +7,7 @@ import { DARK_MODE_STORAGE_KEY } from '@/lib/constants';
 import { createTheme } from "@mantine/core"
 import HomeLayout from './(home)/layout';
 import { WagmiConfig, createConfig, mainnet } from 'wagmi';
-import { localhost, sepolia, polygon } from 'wagmi/chains'
+import { localhost, sepolia, polygon, hardhat } from 'wagmi/chains'
 import { createPublicClient, http } from 'viem';
 import { ConnectKitProvider, ConnectKitButton, getDefaultConfig } from "connectkit";
 
@@ -20,28 +20,16 @@ const wagmiConfig = createConfig({
     autoConnect: true,
     publicClient: publicClient,
 });
-
-const chains = [mainnet, polygon, sepolia, localhost];
+const projectid = process.env.walletConnectProjectId as string;
+const chains = [mainnet, polygon, sepolia, localhost, hardhat];
 const config = createConfig(
     getDefaultConfig({
         appName: "CJ Project",
         chains,
-        walletConnectProjectId: "9cf2ed4e479fccdd7a296cd5cb0c6492",
+        walletConnectProjectId: projectid,
         publicClient: publicClient,
     })
 )
-
-import { Mainnet, DAppProvider, useEtherBalance, useEthers, Config, Goerli, Sepolia } from '@usedapp/core'
-import { formatEther } from '@ethersproject/units'
-import { getDefaultProvider } from 'ethers'
-// useDApp config
-const useDAppConfig: Config = {
-    readOnlyChainId: Sepolia.chainId,
-    readOnlyUrls: {
-        [Mainnet.chainId]: getDefaultProvider('mainnet'),
-        [Sepolia.chainId]: getDefaultProvider('sepolia'),
-    },
-} 
 
 
 let mantineDefaultColorSchemeT = "auto"

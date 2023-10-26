@@ -1,34 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### DApp Playground pre-view
 
-## Getting Started
+#### Connect Wallet -> SIWE
+![image](https://github.com/cjchen5210/DApp-Playground/assets/56478943/003c8b9f-130d-4481-bdc7-cf8aecd45dbc)
+![image](https://github.com/cjchen5210/DApp-Playground/assets/56478943/85841d66-9723-4645-b7eb-b3d22f8f6159)
+![image](https://github.com/cjchen5210/DApp-Playground/assets/56478943/7c3379f3-2091-42e4-b2fd-0ab51f0bfe24)
+![image](https://github.com/cjchen5210/DApp-Playground/assets/56478943/a64a138e-9784-470e-a5df-e468e610aaa3)
+![image](https://github.com/cjchen5210/DApp-Playground/assets/56478943/32a0ece0-aec8-4a48-8add-ab7260375e11)
+![image](https://github.com/cjchen5210/DApp-Playground/assets/56478943/0a29bd02-7e05-491a-a3ea-1965ba1b1c5e)
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+#### Deposit and get token
+![image](https://github.com/cjchen5210/DApp-Playground/assets/56478943/ab7ca73f-c254-4f97-a666-5fb97823c6cb)
+![image](https://github.com/cjchen5210/DApp-Playground/assets/56478943/90d600d4-0dff-4a81-932e-e8d088d617fe)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+#### NFT mint and market place ... coming soon
+![image](https://github.com/cjchen5210/DApp-Playground/assets/56478943/71287dbc-9184-4f01-a08a-c4837c292415)
