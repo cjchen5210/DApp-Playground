@@ -25,7 +25,7 @@ export async function GET(req: NextRequest) {
 
     try {
         const response = await axios.request(options);
-        console.log(response.data);
+        // console.log(response.data);
         const result = response.data.data.coins[0];
         return NextResponse.json(result);
     } catch (error) {
